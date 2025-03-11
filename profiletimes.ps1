@@ -243,10 +243,11 @@ foreach ($profile in $array | sort -Property ProfileLoadTime -Descending:$($desc
 		Write-Host "Keep" -ForegroundColor "Yellow"
 	}
 
+	# Fall through to here when continue is not called
+	
 	# days to use to preserve the record. Will change at load time each day.
 	$age = [Math]::Ceiling(($now - $ProfileLoadDate).TotalDays)
 
-	# Fall through to here when continue is not called
     Write-Output "SID: $($profile.SidTrimmed)"
     Write-Output "Friendly Name: $($profile.FriendlyNameTrimmed)"
 	Write-Output "Profile Image Path: $($profile.ProfileImagePath)"
