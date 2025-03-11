@@ -14,11 +14,11 @@ It's a powershell script tested on Windows 11 Education and Enterprise. It shoul
 Open an administrator CMD prompt. Run powershell.exe with suitable parameters (or use runpowershell.bat).
 There's comment based help available.
 
-Get-Help .\profiletimes.ps1 -Detailed
+>      Get-Help .\profiletimes.ps1 -Detailed
 
 To get a feel for the script run:
 
-.\profiletimes.ps1 -Days 0 -Verboze -Deboog -Listadmin
+>      .\profiletimes.ps1 -Days 0 -Verboze -Deboog -Listadmin
 
 This gives you maximum verbosity. With -Days 0 no profiles are preserved i.e. hidden from the output. -Listadmin includes local system accounts that are normally suppressed. -Verboze provides annotations and -Deboog adds extra comments. Note the default for the Days parameter is 90. 
 
@@ -28,7 +28,7 @@ If the output indicates orphan home folders, you can remove them by including th
 
 Here's another way you can use the script.
 
-.\profiletimes.ps1 -Days 9999 -Dirty
+>      .\profiletimes.ps1 -Days 9999 -Dirty
 
 This preserves (hides) profiles newer than 27 years, which should be all of them, but marks dirty profiles as ancient (425 years old). This lets you select those profiles where the log off wasn't clean. These are sometimes corrupt. Again, add -Cleanup to make it live.
 
