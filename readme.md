@@ -36,4 +36,8 @@ Note that the currently logged on user will match this, but separate code protec
 ## References
 This all started with a hunt for a suitable tool. Delete profiles (theshonkproject) and delprof2 (Helge Klein) both appeared to be unsupported. Eventually I came upon this article on [techcommunity.microsoft.com](https://techcommunity.microsoft.com/discussions/windows-deployment/issue-with-date-modified-for-ntuser-dat/102438) and the rest, as they say, is history.
 
-Here's an alternate source for the "friendly name" code, borrowed from that thread (Ryan Pertusio). [community.spiceworks.com](https://community.spiceworks.com/t/powershell-sid-to-user-and-user-to-sid/1005944)
+Here's an alternate source for the "friendly name" code borrowed from that thread (Ryan Pertusio). [community.spiceworks.com](https://community.spiceworks.com/t/powershell-sid-to-user-and-user-to-sid/1005944)
+## FAQ
+### Q. What's with the weird parameter names?
+### A. I'm so glad you asked.
+Early versions of the script used Verbose and Debug. Then I discovered that these are commonParameters and "You can't create any parameters that use the same names as the Common Parameters". Well, it seemed to be working, but rather than risk it I just used search and replace to change the names. If this triggers you, consider that option1 and option2 are not mnemonic and there's auto-complete so typos should not be a problem.
