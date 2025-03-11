@@ -115,9 +115,9 @@ $profiles = Get-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentV
 
 # Loop through each profile
 Foreach ($profile in $profiles) {
-    # Get the SID
+	# Get the SID
 	try {
-    $SID = New-Object System.Security.Principal.SecurityIdentifier($profile.PSChildName)
+		$SID = New-Object System.Security.Principal.SecurityIdentifier($profile.PSChildName)
 	}
 	# Key is not a SID, *.bak for example?
 	catch {
@@ -128,15 +128,15 @@ Foreach ($profile in $profiles) {
 	}
 	# Convert SID to Friendly name
 	try {
-    $FriendlyName = $SID.Translate([System.Security.Principal.NTAccount])
+		$FriendlyName = $SID.Translate([System.Security.Principal.NTAccount])
 	}
 	catch {
 		Write-Host "Translate threw an error $($profile.PSChildName)" -ForegroundColor "Red"
 	}
 
 	# Trim and store variables
-    $SidTrimmed = $SID.Value
-    $FriendlyNameTrimmed = $FriendlyName.Value
+	$SidTrimmed = $SID.Value
+	$FriendlyNameTrimmed = $FriendlyName.Value
 	
 	$array+= (
 		[pscustomobject]@{
@@ -248,8 +248,8 @@ foreach ($profile in $array | sort -Property ProfileLoadTime -Descending:$($desc
 	# days to use to preserve the record. Will change at load time each day.
 	$age = [Math]::Ceiling(($now - $ProfileLoadDate).TotalDays)
 
-    Write-Output "SID: $($profile.SidTrimmed)"
-    Write-Output "Friendly Name: $($profile.FriendlyNameTrimmed)"
+	Write-Output "SID: $($profile.SidTrimmed)"
+	Write-Output "Friendly Name: $($profile.FriendlyNameTrimmed)"
 	Write-Output "Profile Image Path: $($profile.ProfileImagePath)"
 	Write-Output "Profile Load Date: $ProfileLoadDate"
 	Write-Output "Profile UnLoad Date: $ProfileUnLoadDate"
