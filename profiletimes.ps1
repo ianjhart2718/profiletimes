@@ -307,10 +307,10 @@ if($Size) {
 	}
 }
 
-$end = Get-Date
-$runtime = ($end - $now).TotalSeconds
-
 if($Deboog) {
+	$end = Get-Date
+	$runtime = ($end - $now).TotalSeconds
+
 	Write-Host "$($now) $($end)" -ForegroundColor "Red"
 	Write-Host "Runtime $($runtime)s" -ForegroundColor "Red"
 }
