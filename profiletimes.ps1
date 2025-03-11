@@ -257,7 +257,7 @@ foreach ($profile in $array | sort -Property ProfileLoadTime -Descending:$($desc
 	Write-Output ""
 }
 
-if ($Verboze) {
+if ($Verboze -or $Listadmin) {
 	Write-Host "N.B. US date format.`n" -ForegroundColor "Yellow"
 }
 
