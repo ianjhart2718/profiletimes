@@ -66,7 +66,7 @@
 	Preserve all profiles (newer than 27 years) but mark dirty profiles as deletable.
 	
 	.EXAMPLE
-	In the case where delete throws an exception. Run
+	In the case where delete throws an exception. If default -Days is okay, run
 	
 	PS> .\profiletimes -Cleanup -Deboog
 	
