@@ -1,3 +1,3 @@
 @ECHO OFF
 
-powershell.exe -ExecutionPolicy Bypass
+powershell.exe -ExecutionPolicy RemoteSigned
